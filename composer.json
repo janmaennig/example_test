@@ -1,0 +1,25 @@
+{
+  "name": "janmaennig/example_tests",
+  "type": "typo3-cms-extension",
+  "require-dev": {
+    "phpunit/phpunit": "~9.3.0",
+    "mockery/mockery": "^1.4",
+    "typo3fluid/fluid": "^2.5|^3",
+    "typo3/cms-core": "10.*.*@dev || 11.*.*@dev",
+    "typo3/cms-backend": "10.*.*@dev || 11.*.*@dev",
+    "typo3/cms-frontend": "10.*.*@dev || 11.*.*@dev",
+    "typo3/cms-extbase": "10.*.*@dev || 11.*.*@dev",
+    "typo3/cms-fluid": "10.*.*@dev || 11.*.*@dev",
+    "typo3/cms-recordlist": "10.*.*@dev || 11.*.*@dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "JanMaennig\\ExampleTests\\": "Classes/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "JanMaennig\\ExampleTests\\Tests\\": "tests/"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" backupGlobals="false" colors="true" bootstrap="vendor/autoload.php" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
+  <coverage>
+    <include>
+      <directory>./Classes</directory>
+    </include>
+  </coverage>
+  <testsuites>
+    <testsuite name="Unit">
+      <directory>tests/Unit</directory>
+    </testsuite>
+  </testsuites>
+  <php>
+    <ini name="memory_limit" value="-1"/>
+    <ini name="xdebug.idekey" value="PHPSTORM"/>
+  </php>
+  <listeners>
+    <listener class="\Mockery\Adapter\Phpunit\TestListener"/>
+  </listeners>
+</phpunit>
