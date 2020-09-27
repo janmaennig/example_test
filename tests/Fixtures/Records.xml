@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dataset>
+    <tx_exampletest_domain_model_exampleentity>
+        <uid>1</uid>
+        <pid>0</pid>
+        <title>Müller</title>
+        <deleted>0</deleted>
+    </tx_exampletest_domain_model_exampleentity>
+    <tx_exampletest_domain_model_exampleentity>
+        <uid>2</uid>
+        <pid>1</pid>
+        <title>Schulze</title>
+        <deleted>0</deleted>
+    </tx_exampletest_domain_model_exampleentity>
+    <tx_exampletest_domain_model_exampleentity>
+        <uid>3</uid>
+        <pid>2</pid>
+        <title>Maier</title>
+        <deleted>0</deleted>
+    </tx_exampletest_domain_model_exampleentity>
+</dataset>

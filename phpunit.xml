@@ -6,15 +6,12 @@
     </include>
   </coverage>
   <testsuites>
-    <testsuite name="Unit">
-      <directory>tests/Unit</directory>
+    <testsuite name="Functional">
+      <directory>tests/Functional</directory>
     </testsuite>
   </testsuites>
   <php>
     <ini name="memory_limit" value="-1"/>
     <ini name="xdebug.idekey" value="PHPSTORM"/>
   </php>
-  <listeners>
-    <listener class="\Mockery\Adapter\Phpunit\TestListener"/>
-  </listeners>
 </phpunit>
