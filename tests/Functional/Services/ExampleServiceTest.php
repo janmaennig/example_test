@@ -12,8 +12,21 @@ class ExampleServiceTest extends FunctionalTestCase
 {
     protected ExampleEntityRepository $repository;
 
-    protected $testExtensionsToLoad = [
-        'typo3conf/ext/example_test',
+    protected array $configurationToUseInTestInstance = [
+        'DB' => [
+            'Connections' => [
+                'Default' => [
+                    'host' => '127.0.0.1',
+                    'dbname' => 'database',
+                    'user' => 'user',
+                    'password' => 'password',
+                ],
+            ],
+        ],
+    ];
+
+    protected $pathsToLinkInTestInstance = [
+        __DIR__ . '/../../Fixtures/AdditionalConfiguration.php' => 'typo3conf/AdditionalConfiguration.php'
     ];
 
     public function testCreateJsonWithDatabaseConnection(): void
