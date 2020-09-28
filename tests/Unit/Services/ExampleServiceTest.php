@@ -15,23 +15,23 @@ class ExampleServiceTest extends TestCase
 
     public function testIfValueGreaterThanOne(): void
     {
-        $object = new ExampleService($this->repositoryMock->get());
+        $subject = new ExampleService($this->repositoryMock->get());
 
-        $this->assertTrue($object->isGreaterThanOne(2));
+        $this->assertTrue($subject->isGreaterThanOne(2));
     }
 
     public function testIfValueSmallerThanOne(): void
     {
-        $object = new ExampleService($this->repositoryMock->get());
+        $subject = new ExampleService($this->repositoryMock->get());
 
-        $this->assertFalse($object->isGreaterThanOne(0));
+        $this->assertFalse($subject->isGreaterThanOne(0));
     }
 
     public function testIfValueIsOne(): void
     {
-        $object = new ExampleService($this->repositoryMock->get());
+        $subject = new ExampleService($this->repositoryMock->get());
 
-        $this->assertFalse($object->isGreaterThanOne(1));
+        $this->assertFalse($subject->isGreaterThanOne(1));
     }
 
     public function testTotGenerateJsonFromEntities(): void
@@ -51,7 +51,7 @@ class ExampleServiceTest extends TestCase
             $exampleEntity3,
         ]);
 
-        $object = new ExampleService($this->repositoryMock->get());
+        $subject = new ExampleService($this->repositoryMock->get());
 
         $this->assertJsonStringEqualsJsonString(
             <<< 'JSON'
@@ -67,7 +67,7 @@ class ExampleServiceTest extends TestCase
                     }
                 ]
             JSON,
-            $object->createJsonFromExampleEntities()
+            $subject->createJsonFromExampleEntities()
         );
     }
 
@@ -75,13 +75,13 @@ class ExampleServiceTest extends TestCase
     {
         $this->repositoryMock->mockFindAllAndReturnsEmpty();
 
-        $object = new ExampleService($this->repositoryMock->get());
+        $subject = new ExampleService($this->repositoryMock->get());
 
         $this->assertJsonStringEqualsJsonString(
             <<< 'JSON'
                 []
             JSON,
-            $object->createJsonFromExampleEntities()
+            $subject->createJsonFromExampleEntities()
         );
     }
 
