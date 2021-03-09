@@ -8,6 +8,7 @@ use JanMaennig\ExampleTests\Domain\Model\ExampleEntity;
 use JanMaennig\ExampleTests\Services\ExampleService;
 use JanMaennig\ExampleTests\Tests\Mocks\ExampleEntityRepositoryMock;
 use PHPUnit\Framework\TestCase;
+use Mockery;
 
 class ExampleServiceTest extends TestCase
 {
@@ -92,6 +93,6 @@ class ExampleServiceTest extends TestCase
 
     protected function tearDown(): void
     {
-        \Mockery::close();
+        Mockery::close();
     }
 }
