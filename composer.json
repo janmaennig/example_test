@@ -38,10 +38,10 @@
       "/usr/local/bin/php ./vendor/bin/phpcs.phar ./Classes ./tests --standard=PSR12 --extensions=php --parallel=100"
     ],
     "activate-git-hooks": [
-      "[ -f ../.git/hooks/pre-commit.sh ] || mkdir -p ../.git/hooks/",
-      "[ -f ../.git/hooks/pre-commit.sh ] || echo '#!/bin/sh\n/usr/local/bin/php /usr/local/bin/composer quickcheck -d ./application' | tee ../.git/hooks/pre-commit.sh",
-      "[ -f ../.git/hooks/pre-commit ] || chmod +x ../.git/hooks/pre-commit.sh",
-      "[ -f ../.git/hooks/pre-commit ] || cd ../.git/hooks && [ -f ../.git/hooks/pre-commit ] || ln -snf ./pre-commit.sh ./pre-commit"
+      "[ -f .git/hooks/pre-commit.sh ] || mkdir -p .git/hooks/",
+      "[ -f .git/hooks/pre-commit.sh ] || echo '#!/bin/sh\n/usr/local/bin/php /usr/local/bin/composer quickcheck -d ./application' | tee .git/hooks/pre-commit.sh",
+      "[ -f .git/hooks/pre-commit ] || chmod +x .git/hooks/pre-commit.sh",
+      "[ -f .git/hooks/pre-commit ] || cd .git/hooks && [ -f .git/hooks/pre-commit ] || ln -snf ./pre-commit.sh ./pre-commit"
     ]
   },
   "extra": {
