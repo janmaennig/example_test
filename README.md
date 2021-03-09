@@ -20,6 +20,7 @@ vendor/bin/phpunit -c phpunit.xml
 * https://phpunit.de/
 * https://phpunit.de/documentation.html
 * http://docs.mockery.io/en/latest/
+* https://git-scm.com/book/de/v2/Git-einrichten-Git-Hooks
 
 ## Testpyramide
 
