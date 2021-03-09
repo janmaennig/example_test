@@ -85,7 +85,7 @@ class ExampleServiceTest extends TestCase
         );
     }
 
-    protected function setUp():void
+    protected function setUp(): void
     {
         $this->repositoryMock = new ExampleEntityRepositoryMock();
     }

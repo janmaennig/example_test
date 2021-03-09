@@ -1,5 +1,6 @@
 {
   "name": "janmaennig/example_tests",
+  "description": "Example for my session @t3cm",
   "type": "typo3-cms-extension",
   "require-dev": {
     "phpunit/phpunit": "~9.3.0",
@@ -10,7 +11,8 @@
     "typo3/cms-frontend": "10.*.*@dev || 11.*.*@dev",
     "typo3/cms-extbase": "10.*.*@dev || 11.*.*@dev",
     "typo3/cms-fluid": "10.*.*@dev || 11.*.*@dev",
-    "typo3/cms-recordlist": "10.*.*@dev || 11.*.*@dev"
+    "typo3/cms-recordlist": "10.*.*@dev || 11.*.*@dev",
+    "tm/tooly-composer-script": "^1.4"
   },
   "autoload": {
     "psr-4": {
@@ -20,6 +22,44 @@
   "autoload-dev": {
     "psr-4": {
       "JanMaennig\\ExampleTests\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "@activate-git-hooks",
+      "Tooly\\ScriptHandler::installPharTools"
+    ],
+    "post-update-cmd": [
+      "@activate-git-hooks",
+      "Tooly\\ScriptHandler::installPharTools"
+    ],
+    "quickcheck": [
+      "/usr/local/bin/php ./vendor/bin/phpunit.phar -c ./phpunit.xml --testdox",
+      "/usr/local/bin/php ./vendor/bin/phpcs.phar ./Classes ./tests --standard=PSR12 --extensions=php --parallel=100"
+    ],
+    "activate-git-hooks": [
+      "[ -f ../.git/hooks/pre-commit.sh ] || mkdir -p ../.git/hooks/",
+      "[ -f ../.git/hooks/pre-commit.sh ] || echo '#!/bin/sh\n/usr/local/bin/php /usr/local/bin/composer quickcheck -d ./application' | tee ../.git/hooks/pre-commit.sh",
+      "[ -f ../.git/hooks/pre-commit ] || chmod +x ../.git/hooks/pre-commit.sh",
+      "[ -f ../.git/hooks/pre-commit ] || cd ../.git/hooks && [ -f ../.git/hooks/pre-commit ] || ln -snf ./pre-commit.sh ./pre-commit"
+    ]
+  },
+  "extra": {
+    "tools": {
+      "phpunit": {
+        "url": "https://phar.phpunit.de/phpunit-8.3.5.phar",
+        "sign-url": "https://phar.phpunit.de/phpunit-8.3.5.phar.asc"
+      },
+      "phpcs": {
+        "url": "https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.5.4/phpcs.phar",
+        "sign-url": "https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.5.4/phpcs.phar.asc",
+        "force-replace": true
+      },
+      "phpstan": {
+        "url": "https://github.com/phpstan/phpstan/releases/download/0.11.19/phpstan.phar",
+        "sign-url": "https://github.com/phpstan/phpstan/releases/download/0.11.19/phpstan.phar.asc",
+        "force-replace": true
+      }
     }
   }
 }
