@@ -7,11 +7,6 @@
          colors="true"
          bootstrap="vendor/autoload.php"
          xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
-  <coverage>
-    <include>
-      <directory>./Classes</directory>
-    </include>
-  </coverage>
   <testsuites>
     <testsuite name="Unit">
       <directory>tests/Unit</directory>
