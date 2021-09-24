@@ -61,5 +61,8 @@
         "force-replace": true
       }
     }
+  },
+  "require": {
+    "beberlei/assert": "^3.3"
   }
 }
