@@ -12,10 +12,6 @@
       <directory>tests/Unit</directory>
     </testsuite>
   </testsuites>
-  <php>
-    <ini name="memory_limit" value="-1"/>
-    <ini name="xdebug.idekey" value="PHPSTORM"/>
-  </php>
   <listeners>
     <listener class="\Mockery\Adapter\Phpunit\TestListener"/>
   </listeners>
