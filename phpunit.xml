@@ -19,4 +19,9 @@
   <listeners>
     <listener class="\Mockery\Adapter\Phpunit\TestListener"/>
   </listeners>
+  <coverage processUncoveredFiles="true">
+    <include>
+      <directory suffix=".php">Classes</directory>
+    </include>
+  </coverage>
 </phpunit>

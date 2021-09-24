@@ -7,18 +7,13 @@ namespace JanMaennig\ExampleTests\Services;
 use JanMaennig\ExampleTests\Domain\Model\ExampleEntity;
 use JanMaennig\ExampleTests\Domain\Repository\ExampleEntityRepository;
 
-class ExampleService
+class EntityService
 {
     private ExampleEntityRepository $exampleEntityRepository;
 
     public function __construct(ExampleEntityRepository $exampleEntityRepository)
     {
         $this->exampleEntityRepository = $exampleEntityRepository;
-    }
-
-    public function isGreaterThanOne(int $value): bool
-    {
-        return 1 < $value;
     }
 
     public function createJsonFromExampleEntities(): string

@@ -5,35 +5,14 @@ declare(strict_types=1);
 namespace JanMaennig\ExampleTests\Tests\Unit\Services;
 
 use JanMaennig\ExampleTests\Domain\Model\ExampleEntity;
-use JanMaennig\ExampleTests\Services\ExampleService;
+use JanMaennig\ExampleTests\Services\EntityService;
 use JanMaennig\ExampleTests\Tests\Mocks\ExampleEntityRepositoryMock;
 use PHPUnit\Framework\TestCase;
 use Mockery;
 
-class ExampleServiceTest extends TestCase
+class EntityServiceTest extends TestCase
 {
     private ExampleEntityRepositoryMock $repositoryMock;
-
-    public function testIfValueGreaterThanOne(): void
-    {
-        $subject = new ExampleService($this->repositoryMock->get());
-
-        $this->assertTrue($subject->isGreaterThanOne(2));
-    }
-
-    public function testIfValueSmallerThanOne(): void
-    {
-        $subject = new ExampleService($this->repositoryMock->get());
-
-        $this->assertFalse($subject->isGreaterThanOne(0));
-    }
-
-    public function testIfValueIsOne(): void
-    {
-        $subject = new ExampleService($this->repositoryMock->get());
-
-        $this->assertFalse($subject->isGreaterThanOne(1));
-    }
 
     public function testTotGenerateJsonFromEntities(): void
     {
@@ -52,7 +31,7 @@ class ExampleServiceTest extends TestCase
             $exampleEntity3,
         ]);
 
-        $subject = new ExampleService($this->repositoryMock->get());
+        $subject = new EntityService($this->repositoryMock->get());
 
         $this->assertJsonStringEqualsJsonString(
             <<< 'JSON'
@@ -76,7 +55,7 @@ class ExampleServiceTest extends TestCase
     {
         $this->repositoryMock->mockFindAllAndReturnsEmpty();
 
-        $subject = new ExampleService($this->repositoryMock->get());
+        $subject = new EntityService($this->repositoryMock->get());
 
         $this->assertJsonStringEqualsJsonString(
             <<< 'JSON'
